@@ -1,4 +1,4 @@
-# pp-winget-isntall
+# pp-winget-install
 
 A scrypt to automate the installation of my day to day programs.
 
