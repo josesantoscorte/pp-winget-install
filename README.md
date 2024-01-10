@@ -2,14 +2,26 @@
 
 A scrypt to automate the installation of my day to day programs.
 
-## Communication
+## Usage
+
+To run the script, you need to have [winget] installed.
+
+On PowerShell, inside the folder where the scrypt is installed, run the following command to execute the script:
+
+```powershell
+.\install.ps1
+```
+
+## Packages
+
+### Communication
 
 | Name | Id |
 | --- | --- |
 | Discord | Discord.Discord |
 | WhatsApp | WhatsApp.WhatsApp |
 
-## Media
+### Media
 
 | Name | Id |
 | --- | --- |
@@ -17,7 +29,7 @@ A scrypt to automate the installation of my day to day programs.
 | Spotify | Spotify.Spotify |
 | OBS Studio | OBSProject.OBSStudio |
 
-## System
+### System
 
 | Name | Id |
 | --- | --- |
@@ -27,7 +39,7 @@ A scrypt to automate the installation of my day to day programs.
 | Adobe Acrobat (64-bit) | Adobe.Acrobat.Reader.64-bit |
 | Chromium | Hibbiki.Chromium |
 
-## Dev
+### Dev
 
 | Name | Id |
 | --- | --- |
@@ -35,14 +47,14 @@ A scrypt to automate the installation of my day to day programs.
 | Microsoft Visual Studio Code (User) | Microsoft.VisualStudioCode |
 | Godot Engine | GodotEngine.GodotEngine |
 
-## System Drivers
+### System Drivers
 
 | Name | Id |
 | --- | --- |
 | VIA | Olivia.VIA |
 | Wacom Tablet | Wacom.WacomTabletDriver |
 
-## Network
+### Network
 
 | Name | Id |
 | --- | --- |
@@ -50,7 +62,7 @@ A scrypt to automate the installation of my day to day programs.
 | qBittorrent | qBittorrent.qBittorrent |
 | MEGAsync | Mega.MEGASync |
 
-## Games
+### Games
 
 | Name | Id |
 | --- | --- |
@@ -58,7 +70,7 @@ A scrypt to automate the installation of my day to day programs.
 | Ubisoft Connect | Ubisoft.Connect |
 | Steam | Valve.Steam |
 
-## TODO
+### TODO
 
 | Name |
 | --- |
