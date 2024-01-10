@@ -2,6 +2,8 @@
 
 A scrypt to automate the installation of my day to day programs.
 
+![Menu](./menu.png)
+
 ## Usage
 
 To run the script, you need to have [winget] installed.
