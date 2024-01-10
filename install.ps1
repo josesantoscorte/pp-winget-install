@@ -1,3 +1,20 @@
+# Function to install winget if it is not already installed
+function InstallWinget {
+    try {
+        $wingetInstalled = winget --version
+    } catch {
+        $wingetInstalled = $null
+    }
+
+    if ($null -eq $wingetInstalled) {
+        Write-Host "`n❌ Winget is not installed. You need to install it to continue."
+        Write-Host "🌐 https://learn.microsoft.com/en-us/windows/package-manager/winget/"
+        EXIT
+    } else {
+        Write-Host "`n✅ Winget is installed."
+    }
+}
+
 # Function to install packages in a specific category
 function InstallPackagesInCategory {
     param (
@@ -16,7 +33,7 @@ function InstallPackagesInCategory {
         winget install -e --id $package
     }
 
-    Write-Host "All $category packages installed successfully."
+    Write-Host "✅ All $category packages installed successfully."
 }
 
 # Define categories and their corresponding packages
@@ -31,14 +48,22 @@ $categories = @{
 }
 
 # Give credits to the author
-Write-Host "`nCorte's Install Script for Windows 11"
+Write-Host "`n✨ Corte's Install Script for Windows 11 "
+Write-Host "🌐 https://github.com/josesantoscorte/pp-winget-install.git"
+
+# Call the InstallWinget function
+InstallWinget
 
 $exitLoop = $false
 
 while ($exitLoop -eq $false) {
 
-    Write-Host "`nWhat packages do you want to install? [L] List all packages [A] All [C] Install by category [Q] Quit"
-    $userInput = Read-Host
+    Write-Host "`n❔ What packages do you want to install? 
+    `n - 🅰️ [A] All 
+    `n - ♻️ [C] Install by category 
+    `n - ⏬ [L] List packages 
+    `n - ❌ [Q] Quit`n"
+    $userInput = Read-Host "> "
 
     if ($userInput -eq "L") {
         Write-Host "`n=================================================="
@@ -62,7 +87,7 @@ while ($exitLoop -eq $false) {
         }
 
         Write-Host "--------------------------------------------------"
-        Write-Host "All packages installed successfully."
+        Write-Host "✅ All packages installed successfully."
         Write-Host "=================================================="
         $exitLoop = $true
     }
@@ -76,15 +101,17 @@ while ($exitLoop -eq $false) {
             Write-Host "=================================================="
             $categoryPackages | ForEach-Object { Write-Host $_ }
             Write-Host "--------------------------------------------------"
-            Write-Host "Do you want to install the $category category? [Y] Yes [N] No"
-            $userInput = Read-Host
+            Write-Host "`n❔ Do you want to install the $category category? 
+            `n - ✔️ [Y] Yes
+            `n - ❌ [N] No`n"
+            $userInput = Read-Host "> "
         
             if ($userInput -eq "Y") {
                 InstallPackagesInCategory -category $category
             }
         }
         Write-Host "`n=================================================="
-        Write-Host "All prompts have been processed."
+        Write-Host "✅ All prompts have been processed.`n"
         EXIT
     }
 
