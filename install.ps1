@@ -61,7 +61,7 @@ while ($exitLoop -eq $false) {
     Write-Host "`n❔ What packages do you want to install? 
     `n - 🅰️ [A] All 
     `n - ♻️ [C] Install by category 
-    `n - ⏬ [L] List packages 
+    `n - 📂 [L] List packages 
     `n - ❌ [Q] Quit`n"
     $userInput = Read-Host "> "
 
@@ -79,6 +79,10 @@ while ($exitLoop -eq $false) {
         Write-Host "`n=================================================="
         Write-Host "All packages listed successfully."
         Write-Host "==================================================`n"
+    }
+
+    if ($userInput -eq "W") {
+        InstallWSL
     }
 
     if ($userInput -eq "A") {
