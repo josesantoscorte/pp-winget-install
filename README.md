@@ -73,13 +73,5 @@ On PowerShell, inside the folder where the scrypt is installed, run the followin
 | Steam | Valve.Steam |
 
 ### TODO
-
-| Name |
-| --- |
-| WSL install |
-| Add NVIDIA Drivers |
-| Battle.net |
-| Rockstar Games Launche |
-| Network Identity Manager |
-| OpenAFS |
-| Heimdal | 
+- Add NVIDIA Drivers
+- Add Wireshark
